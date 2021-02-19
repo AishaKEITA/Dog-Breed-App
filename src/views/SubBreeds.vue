@@ -1,13 +1,13 @@
 
 <template>
-  <div class="breeds">
-    <h1>welcome to the breeds</h1>
+  <div class="sub-Breeds">
+    <h1>welcome to the sub-breeds</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Breeds',
+  name: 'SubBreeds',
   data () {
     return {
     }
