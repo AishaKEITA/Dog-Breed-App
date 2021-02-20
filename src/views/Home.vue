@@ -1,17 +1,19 @@
 
 <template>
   <div class="home">
+    <v-app>
     <h1>welcome to the home</h1>
-     <Breeds />
+    <Footer />
+  </v-app>
   </div>
 </template>
 
 <script>
-import Breeds from '../views/Breeds'
+import Footer from '../components/Footer'
 export default {
   name: 'Home',
   components: {
-    Breeds
+    Footer
   },
   data () {
     return {
