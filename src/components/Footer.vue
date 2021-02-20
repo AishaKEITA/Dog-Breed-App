@@ -1,16 +1,20 @@
 
 <template>
   <div class="footer">
-   <v-footer inset width="auto" class="py-12">
-            <v-container>
-                <v-row justify="center">
-                    <v-col lg="2" md="3" cols="12" align-self="center">
-                        <v-img src="https://picsum.photos/id/419/200/300" max-width="50" max-height="50">
-                        </v-img>
-                    </v-col>
-                </v-row>
-            </v-container>
+  <v-app>
+      <v-container>
+    <v-row>
+      <v-col col="12">
+        <v-footer app color="1d3557" padless class="font-weight-medium">
+          <v-col class="text-center" cols="12">
+            <strong>&copy; Aisha Keita</strong>
+             {{ new Date().getFullYear() }}
+          </v-col>
         </v-footer>
+      </v-col>
+    </v-row>
+  </v-container>
+    </v-app>
   </div>
 </template>
 
@@ -23,4 +27,7 @@ export default {
 }
 </script>
 <style scoped>
+strong {
+  color: #1d3557
+}
 </style>
