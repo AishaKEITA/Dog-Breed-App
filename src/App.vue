@@ -1,16 +1,16 @@
 <template>
- <div class="app">
-   <v-app>
-    <Header />
-<section>
-   <div class="container">
-      <SideMenu />
-    <v-main>
-      <router-view />
-    </v-main>
-  </div>
-</section>
-</v-app>
+  <div class="app">
+    <v-app>
+      <Header />
+      <section>
+        <div class="container">
+          <SideMenu />
+          <v-main>
+            <router-view></router-view>
+          </v-main>
+        </div>
+      </section>
+    </v-app>
   </div>
 </template>
 <script>
@@ -33,7 +33,7 @@ section > div {
   display: flex;
   justify-content: space-between;
 }
-.container ,  section {
-  width: 50%
+section {
+  max-width: 60%;
 }
 </style>
