@@ -2,9 +2,9 @@
 <template>
   <div class="home">
     <v-app>
-    <h1>{{welcomeMessage}}</h1>
-    <Footer />
-  </v-app>
+      <h1>{{ welcomeMessage }}</h1>
+      <Footer />
+    </v-app>
   </div>
 </template>
 
@@ -19,13 +19,20 @@ export default {
     return {
       welcomeMessage: 'Welcome to the land of dogs'
     }
+  },
+
+  /* --- simple fetch of the api --- */
+  created () {
+    fetch('https://dog.ceo/api/breeds/list/all')
+      .then(response => response.json())
+      .then(data => console.log(data))
   }
 }
 </script>
 <style scoped>
 h1 {
-font-size: 50px;
-text-align: center;
-color: #6d6875;
+  font-size: 50px;
+  text-align: center;
+  color: #6d6875;
 }
 </style>
