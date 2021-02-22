@@ -2,6 +2,9 @@
 <template>
   <div class="breeds">
     <h1>{{heading}}</h1>
+     <v-btn color="#264653" class="ma-2"
+        outlined @click="getAllBreedList()">{{ breedListButton }}</v-btn>
+
     <Footer />
   </div>
 </template>
@@ -15,7 +18,8 @@ export default {
   },
   data () {
     return {
-      heading: 'Breeds'
+      heading: 'Breeds',
+      breedListButton: 'Click breeds'
     }
   },
   methods: {
