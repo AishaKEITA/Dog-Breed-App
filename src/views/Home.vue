@@ -3,8 +3,9 @@
   <div class="home">
     <v-app>
       <h1>{{ welcomeMessage }}</h1>
-   <v-btn color="#264653" class="text-xs-center" @click="getRandomImage()">{{ randomImageButton }}</v-btn>
-   <img v-bind:src='randomImage'/>
+   <v-btn color="#264653" class="ma-2"
+        outlined @click="getRandomImage()">{{ randomImageButton }}</v-btn>
+  <div class="image"><img v-bind:src='randomImage'/> </div>
       <Footer />
     </v-app>
   </div>
@@ -31,12 +32,14 @@ export default {
   },
 
   methods: {
-    /* --- fetch random image --- */
+    /* --- fetch breeds --- */
     getAllBreedList () {
       fetch('https://dog.ceo/api/breeds/list/all')
         .then(response => response.json())
         .then(data => console.log(data))
     },
+
+    /* --- fetch random image --- */
     getRandomImage () {
       fetch('https://dog.ceo/api/breeds/image/random')
         .then(response => response.json())
@@ -56,5 +59,9 @@ h1 {
 }
 .home {
   height: auto
+}
+.image {
+  margin-right: 30%;
+  padding: 10%;
 }
 </style>
