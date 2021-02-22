@@ -21,7 +21,7 @@ export default {
   data () {
     return {
       welcomeMessage: 'Welcome to the land of dogs',
-      randomImageButton: 'Click random Imagae',
+      randomImageButton: 'Click random imagae',
       randomImage: ''
     }
   },
