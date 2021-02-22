@@ -27,12 +27,12 @@ export default {
           menuText: 'Home'
         },
         {
-          path: '/Breeds',
+          path: '/breeds',
           menuText: 'Breeds'
         },
 
         {
-          path: '/SubBreeds',
+          path: '/subbreeds',
           menuText: 'SubBreeds'
         }
       ]
