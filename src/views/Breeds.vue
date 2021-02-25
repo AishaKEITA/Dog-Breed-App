@@ -6,7 +6,7 @@
       <Breed
         v-for="(breedName, index) in breedNames"
         :key="index"
-        :name="breedName"
+        :breed="breedName"
       />
     </div>
     <Footer />

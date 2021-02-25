@@ -10,8 +10,8 @@
         <Breed
          v-for="(item, index) in subbreeds"
         :key="index"
-        :name="item"
-        :overallbreed="nameOverallBreed"
+        :subbreed="item"
+        :breed="nameOverallBreed"
         />
 
   </div>

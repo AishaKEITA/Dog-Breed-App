@@ -7,7 +7,13 @@
       width="200px"
       @click="breedClickHandler()"
     >
-      {{ name }}
+    <div v-if="subbreed">
+      {{ subbreed }}
+    </div>
+    <div v-else>
+      {{ breed }}
+    </div>
+
     </v-btn>
     <div class="breedImage" v-if="showbreedImage">
       <img :src="breedImage" height="300" width="auto" />
@@ -29,11 +35,11 @@
 export default {
     name: 'Breed',
     props: {
-        name: {
+        breed: {
             type: String,
             required: true
         },
-        overallbreed: {
+        subbreed: {
             type: String,
             required: false
         }
@@ -50,10 +56,10 @@ export default {
     /* --- fetch breeds by image --- */
         getNewImage () {
             let fetchURL
-            if (this.overallbreed) {
-                fetchURL = `https://dog.ceo/api/breed/${this.overallbreed}/${this.name}/images/random`
+            if (this.subbreed) {
+                fetchURL = `https://dog.ceo/api/breed/${this.breed}/${this.subbreed}/images/random`
             } else {
-                fetchURL = `https://dog.ceo/api/breed/${this.name}/images/random`
+                fetchURL = `https://dog.ceo/api/breed/${this.breed}/images/random`
             }
             fetch(fetchURL)
                 .then(response => response.json())
