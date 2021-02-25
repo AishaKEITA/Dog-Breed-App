@@ -1,36 +1,54 @@
 
 <template>
   <div class="breeds">
-    <h1>{{heading}}</h1>
-     <v-btn color="#264653" class="ma-2"
-        outlined @click="getAllBreedList()">{{ breedListButton }}</v-btn>
-
+    <h1>{{ welcomeMessage }}</h1>
+    <div id="breeds">
+      <Breed
+        v-for="(breedName, index) in breedNames"
+        :key="index"
+        :name="breedName"
+      />
+    </div>
     <Footer />
   </div>
 </template>
 
 <script>
 import Footer from '../components/Footer'
+import Breed from './Breed'
 export default {
-  name: 'Breeds',
-  components: {
-    Footer
-  },
-  data () {
-    return {
-      heading: 'Breeds',
-      breedListButton: 'Click breeds'
+    name: 'Breeds',
+    components: {
+        Footer,
+        Breed
+    },
+    data () {
+        return {
+            heading: 'Breeds',
+            breedListButton: 'Click breeds',
+            breedData: '',
+            breedNames: [],
+            welcomeMessage: 'Check out all the breeds'
+        }
+    },
+    created () {
+        this.getAllBreedList()
+    },
+    methods: {
+    /* --- fetch breeds all breeds --- */
+        getAllBreedList () {
+            const temporaryBreedNames = []
+            fetch('https://dog.ceo/api/breeds/list/all')
+                .then(response => response.json())
+                .then(data => {
+                    this.breedData = data.message
+                    for (let breed in this.breedData) {
+                        temporaryBreedNames.push(breed)
+                    }
+                    this.breedNames = temporaryBreedNames
+                })
+        }
     }
-  },
-  methods: {
-    /* --- fetch breeds --- */
-    getAllBreedList () {
-      fetch('https://dog.ceo/api/breeds/list/all')
-        .then(response => response.json())
-        .then(data => console.log(data))
-    }
-
-  }
 }
 </script>
 <style scoped>

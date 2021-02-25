@@ -20,10 +20,10 @@
 
 <script>
 export default {
-  name: 'Header',
-  data () {
-    return {}
-  }
+    name: 'Header',
+    data () {
+        return {}
+    }
 }
 </script>
 <style scoped>
