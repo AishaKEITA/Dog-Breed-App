@@ -3,9 +3,18 @@
   <div class="home">
     <v-app>
       <h1>{{ welcomeMessage }}</h1>
-   <v-btn color="#264653" class="ma-2"
-        outlined @click="getRandomImage()">{{ randomImageButton }}</v-btn>
-  <div class="image"><img v-bind:src='randomImage'/> </div>
+      <div v-if="randomImage" class="image">
+        <img v-bind:src="randomImage" height="300" width="auto" />
+      </div>
+      <div class="homebtn">
+        <v-btn
+          color="#264653"
+          class="white--text"
+          width="200px"
+          @click="getRandomImage()"
+          >{{ randomImageButton }}</v-btn
+        >
+      </div>
       <Footer />
     </v-app>
   </div>
@@ -14,41 +23,42 @@
 <script>
 import Footer from '../components/Footer'
 export default {
-  name: 'Home',
-  components: {
-    Footer
-  },
-  data () {
-    return {
-      welcomeMessage: 'Welcome to the land of dogs',
-      randomImageButton: 'Click random imagae',
-      randomImage: ''
-    }
-  },
-
-  /* --- simple fetch of the api --- */
-  created () {
-
-  },
-
-  methods: {
-    /* --- fetch breeds --- */
-    getAllBreedList () {
-      fetch('https://dog.ceo/api/breeds/list/all')
-        .then(response => response.json())
-        .then(data => console.log(data))
+    name: 'Home',
+    components: {
+        Footer
+    },
+    data () {
+        return {
+            welcomeMessage: 'Welcome to the land of dogs',
+            randomImageButton: 'Click random imagae',
+            randomImage: '',
+            displayRandomImage: []
+        }
     },
 
-    /* --- fetch random image --- */
-    getRandomImage () {
-      fetch('https://dog.ceo/api/breeds/image/random')
-        .then(response => response.json())
-        .then(data => {
-          this.randomImage = data.message
-          console.log(this.randomImage)
-        })
+    /* --- simple fetch of the api --- */
+    created () {
+        this.getRandomImage()
+    },
+
+    methods: {
+    /* --- fetch lisst of all breeds --- */
+        getAllBreedList () {
+            fetch('https://dog.ceo/api/breeds/list/all')
+                .then(response => response.json())
+                .then(data => console.log(data))
+        },
+
+        /* --- fetch random image --- */
+        getRandomImage () {
+            fetch('https://dog.ceo/api/breeds/image/random')
+                .then(response => response.json())
+                .then(data => {
+                    this.randomImage = data.message
+                    console.log(this.randomImage)
+                })
+        }
     }
-  }
 }
 </script>
 <style scoped>
@@ -58,10 +68,19 @@ h1 {
   color: #6d6875;
 }
 .home {
-  height: auto
+  height: auto;
 }
 .image {
-  margin-right: 30%;
-  padding: 10%;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.homebtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 5%;
 }
 </style>
