@@ -23,6 +23,8 @@
       </div>
     </div>
     <br />
+      <div class="subbreedsImage">
+    </div>
   </div>
 </template>
 <script>
