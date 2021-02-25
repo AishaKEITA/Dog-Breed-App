@@ -9,14 +9,14 @@
 <script>
 import Footer from '../components/Footer'
 export default {
-  name: 'SubBreeds',
-  components: {
-    Footer
-  },
-  data () {
-    return {
+    name: 'SubBreeds',
+    components: {
+        Footer
+    },
+    data () {
+        return {
+        }
     }
-  }
 }
 </script>
 <style scoped>
