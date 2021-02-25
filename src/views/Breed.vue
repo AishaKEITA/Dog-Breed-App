@@ -9,14 +9,14 @@
     >
       {{ name }}
     </v-btn>
-    <div class="breedImage" v-if="showbreedImages">
-      <img :src="breedImages[imageIndex]" height="300" width="auto" />
+    <div class="breedImage" v-if="showbreedImage">
+      <img :src="breedImage" height="300" width="auto" />
       <div>
         <v-btn
           class="white--text"
           color="#fcbf49"
           width="200px"
-          @click="incrementIndex()"
+          @click="getNewImage()"
         >
           {{ newImageText }}
         </v-btn>
@@ -40,43 +40,34 @@ export default {
     },
     data () {
         return {
-            breedImages: [],
-            imageIndex: 0,
-            showbreedImages: false,
+            breedImage: '',
+            showbreedImage: false,
             needFetch: true,
             newImageText: 'New image'
         }
     },
     methods: {
     /* --- fetch breeds by image --- */
-        getBreedImages () {
+        getNewImage () {
             let fetchURL
             if (this.overallbreed) {
-                fetchURL = `https://dog.ceo/api/breed/${this.overallbreed}/${this.name}/images`
+                fetchURL = `https://dog.ceo/api/breed/${this.overallbreed}/${this.name}/images/random`
             } else {
-                fetchURL = `https://dog.ceo/api/breed/${this.name}/images`
+                fetchURL = `https://dog.ceo/api/breed/${this.name}/images/random`
             }
             fetch(fetchURL)
                 .then(response => response.json())
                 .then(data => {
-                    this.breedImages = data.message.slice(0, 8)
+                    this.breedImage = data.message
                 })
-            console.log(this.breedImages)
         },
         /* --- handle click of getting breed image--- */
         breedClickHandler () {
             if (this.needFetch) {
-                this.getBreedImages()
+                this.getNewImage()
                 this.needFetch = false
             }
-            this.showbreedImages = !this.showbreedImages
-        },
-        /* --- handle increment for each click --- */
-        incrementIndex () {
-            this.imageIndex++
-            if (this.imageIndex >= this.breedImages.length) {
-                this.imageIndex = 0
-            }
+            this.showbreedImage = !this.showbreedImage
         }
     }
 }
