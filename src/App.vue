@@ -18,22 +18,24 @@ import Header from './components/Header'
 import SideMenu from './components/SideMenu'
 
 export default {
-  name: 'App',
-  components: {
-    Header,
-    SideMenu
-  },
-  data () {
-    return {}
-  }
+    name: 'App',
+    components: {
+        Header,
+        SideMenu
+    },
+    data () {
+        return {}
+    }
 }
 </script>
 <style scoped>
 section > div {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  max-width: 100%;
 }
 section {
-  max-width: 60%;
+  max-width: 100%;
+  height: auto;
 }
 </style>
