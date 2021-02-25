@@ -23,8 +23,6 @@
       </div>
     </div>
     <br />
-      <div class="subbreedsImage">
-    </div>
   </div>
 </template>
 <script>
@@ -34,6 +32,10 @@ export default {
         name: {
             type: String,
             required: true
+        },
+        overallbreed: {
+            type: String,
+            required: false
         }
     },
     data () {
@@ -48,7 +50,13 @@ export default {
     methods: {
     /* --- fetch breeds by image --- */
         getBreedImages () {
-            fetch(`https://dog.ceo/api/breed/${this.name}/images`)
+            let fetchURL
+            if (this.overallbreed) {
+                fetchURL = `https://dog.ceo/api/breed/${this.overallbreed}/${this.name}/images`
+            } else {
+                fetchURL = `https://dog.ceo/api/breed/${this.name}/images`
+            }
+            fetch(fetchURL)
                 .then(response => response.json())
                 .then(data => {
                     this.breedImages = data.message.slice(0, 8)

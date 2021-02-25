@@ -3,11 +3,14 @@
   <div class="sub-Breeds">
     <h1>Check out breeds and sub-breeds</h1>
       <div id="subbreeds">
-      <Breed
-        v-for="(breedName, index) in breedNames"
-        :key="index"
-        :name="breedName"
-      />
+    </div>
+    <div class="subbreed">
+   <Subbreed
+         v-for="(value, key) in breedsWithSubBreed"
+        :key="key"
+        :nameOverallBreed="key"
+        :subbreeds="value"
+   />
     </div>
 
       <Footer />
@@ -16,17 +19,16 @@
 
 <script>
 import Footer from '../components/Footer'
-import Breed from './Breed'
+import Subbreed from './Subbreed'
 export default {
-    name: 'SubBreeds',
+    name: 'Subbreeds',
     components: {
         Footer,
-        Breed
+        Subbreed
     },
     data () {
         return {
-            breedData: '',
-            breedNames: []
+            breedsWithSubBreed: {}
         }
     },
     created () {
@@ -35,15 +37,16 @@ export default {
     methods: {
         /* --- fetch breeds all breeds --- */
         getBreedList () {
-            const temporaryBreedNames = []
             fetch('https://dog.ceo/api/breeds/list/all')
                 .then(response => response.json())
                 .then(data => {
-                    this.breedData = data.message
-                    for (let breed in this.breedData) {
-                        temporaryBreedNames.push(breed)
+                    let allbreeds = data.message
+                    for (let key in allbreeds) {
+                        if (!allbreeds[key].length) {
+                            delete allbreeds[key]
+                        }
                     }
-                    this.breedNames = temporaryBreedNames
+                    this.breedsWithSubBreed = allbreeds
                 })
         }
     }

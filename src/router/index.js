@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Breeds from '@/views/Breeds.vue'
 import Home from '@/views/Home.vue'
-import SubBreeds from '@/views/SubBreeds'
+import Subbreeds from '@/views/Subbreeds'
 
 Vue.use(Router)
 
@@ -19,9 +19,9 @@ export default new Router({
             component: Breeds
         },
         {
-            path: '/SubBreeds',
-            name: 'SubBreeds',
-            component: SubBreeds
+            path: '/Subbreeds',
+            name: 'Subbreeds',
+            component: Subbreeds
         }
     ]
 })
