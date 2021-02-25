@@ -1,7 +1,7 @@
 
 <template>
   <div class="sub-Breeds">
-    <h1>welcome to the sub-breeds</h1>
+    <h1>Check out breeds and sub-breeds</h1>
       <Footer />
   </div>
 </template>
@@ -20,4 +20,9 @@ export default {
 }
 </script>
 <style scoped>
+h1 {
+  font-size: 50px;
+  text-align: center;
+  color: #6d6875;
+}
 </style>
