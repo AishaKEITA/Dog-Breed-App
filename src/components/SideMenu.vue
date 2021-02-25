@@ -15,29 +15,29 @@
 <script>
 import SideMenuButton from './SideMenuButton'
 export default {
-  name: 'SideMenu',
-  components: {
-    SideMenuButton
-  },
-  data () {
-    return {
-      menuButtons: [
-        {
-          path: '/',
-          menuText: 'Home'
-        },
-        {
-          path: '/breeds',
-          menuText: 'Breeds'
-        },
+    name: 'SideMenu',
+    components: {
+        SideMenuButton
+    },
+    data () {
+        return {
+            menuButtons: [
+                {
+                    path: '/',
+                    menuText: 'Home'
+                },
+                {
+                    path: '/breeds',
+                    menuText: 'Breeds'
+                },
 
-        {
-          path: '/subbreeds',
-          menuText: 'SubBreeds'
+                {
+                    path: '/subbreeds',
+                    menuText: 'SubBreeds'
+                }
+            ]
         }
-      ]
     }
-  }
 }
 </script>
 <style scoped>

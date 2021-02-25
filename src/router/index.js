@@ -7,21 +7,21 @@ import SubBreeds from '@/views/SubBreeds'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/Breeds',
-      name: 'Breeds',
-      component: Breeds
-    },
-    {
-      path: '/SubBreeds',
-      name: 'SubBreeds',
-      component: SubBreeds
-    }
-  ]
+    routes: [
+        {
+            path: '/',
+            name: 'Home',
+            component: Home
+        },
+        {
+            path: '/Breeds',
+            name: 'Breeds',
+            component: Breeds
+        },
+        {
+            path: '/SubBreeds',
+            name: 'SubBreeds',
+            component: SubBreeds
+        }
+    ]
 })

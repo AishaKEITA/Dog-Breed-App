@@ -11,18 +11,18 @@
 <script>
 
 export default {
-  name: 'SideMenuButton',
-  props: ['menuText', 'path'],
-  data () {
-    return {
+    name: 'SideMenuButton',
+    props: ['menuText', 'path'],
+    data () {
+        return {
 
+        }
+    },
+    methods: {
+        changePath () {
+            this.$router.push(this.$props.path)
+        }
     }
-  },
-  methods: {
-    changePath () {
-      this.$router.push(this.$props.path)
-    }
-  }
 }
 </script>
 
