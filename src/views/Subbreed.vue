@@ -4,16 +4,18 @@
     <v-btn
       color="red"
       width="200px"
+      @click="showSubbreeds = !showSubbreeds"
     >
       {{ nameOverallBreed }}
     </v-btn>
+    <div v-if="showSubbreeds">
         <Breed
          v-for="(item, index) in subbreeds"
         :key="index"
         :subbreed="item"
         :breed="nameOverallBreed"
         />
-
+    </div>
   </div>
 </template>
 <script>
@@ -35,7 +37,7 @@ export default {
     },
     data () {
         return {
-
+            showSubbreeds: false
         }
     },
     methods: {
