@@ -7,13 +7,12 @@
       width="200px"
       @click="breedClickHandler()"
     >
-    <div v-if="subbreed">
-      {{ subbreed }}
-    </div>
-    <div v-else>
-      {{ breed }}
-    </div>
-
+        <span v-if="subbreed">
+            {{ subbreed }}
+        </span>
+        <span v-else>
+            {{ breed }}
+        </span>
     </v-btn>
     <div class="breedImage" v-if="showbreedImage">
       <img :src="breedImage" height="300" width="auto" />
