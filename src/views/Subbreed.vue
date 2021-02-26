@@ -9,12 +9,12 @@
       {{ nameOverallBreed }}
     </v-btn>
     <div v-if="showSubbreeds">
-        <Breed
-         v-for="(item, index) in subbreeds"
+      <Breed
+        v-for="(item, index) in subbreeds"
         :key="index"
         :subbreed="item"
         :breed="nameOverallBreed"
-        />
+      />
     </div>
   </div>
 </template>

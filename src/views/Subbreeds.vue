@@ -2,18 +2,17 @@
 <template>
   <div class="sub-Breeds">
     <h1>Check out breeds and sub-breeds</h1>
-      <div id="subbreeds">
-    </div>
+    <div id="subbreeds"/>
     <div class="subbreed">
-   <Subbreed
-         v-for="(value, key) in breedsWithSubBreed"
+      <Subbreed
+        v-for="(value, key) in breedsWithSubBreed"
         :key="key"
-        :nameOverallBreed="key"
+        :name-overall-breed="key"
         :subbreeds="value"
-   />
+      />
     </div>
 
-      <Footer />
+    <Footer />
   </div>
 </template>
 

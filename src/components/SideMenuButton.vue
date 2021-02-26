@@ -1,9 +1,12 @@
 
 <template>
-<div class="SideMenuButton">
-  <v-btn class="ml-5" text @click="changePath">
-    {{menuText}}
-  </v-btn>
+  <div class="SideMenuButton">
+    <v-btn
+      class="ml-5"
+      text
+      @click="changePath">
+      {{ menuText }}
+    </v-btn>
   </div>
 
 </template>
@@ -12,7 +15,16 @@
 
 export default {
     name: 'SideMenuButton',
-    props: ['menuText', 'path'],
+    props: {
+        menuText: {
+            type: String,
+            required: true
+        },
+        path: {
+            type: String,
+            required: true
+        }
+    },
     data () {
         return {
 

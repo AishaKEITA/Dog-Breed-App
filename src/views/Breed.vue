@@ -7,15 +7,20 @@
       width="200px"
       @click="breedClickHandler()"
     >
-        <span v-if="subbreed">
-            {{ subbreed }}
-        </span>
-        <span v-else>
-            {{ breed }}
-        </span>
+      <span v-if="subbreed">
+        {{ subbreed }}
+      </span>
+      <span v-else>
+        {{ breed }}
+      </span>
     </v-btn>
-    <div class="breedImage" v-if="showbreedImage">
-      <img :src="breedImage" height="300" width="auto" />
+    <div
+      v-if="showbreedImage"
+      class="breedImage">
+      <img
+        :src="breedImage"
+        height="300"
+        width="auto" >
       <div>
         <v-btn
           class="white--text"
@@ -27,7 +32,7 @@
         </v-btn>
       </div>
     </div>
-    <br />
+    <br >
   </div>
 </template>
 <script>
@@ -40,7 +45,8 @@ export default {
         },
         subbreed: {
             type: String,
-            required: false
+            required: false,
+            default: ''
         }
     },
     data () {

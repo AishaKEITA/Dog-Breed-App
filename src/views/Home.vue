@@ -3,8 +3,13 @@
   <div class="home">
     <v-app>
       <h1>{{ welcomeMessage }}</h1>
-      <div v-if="randomImage" class="image">
-        <img v-bind:src="randomImage" height="300" width="auto" />
+      <div
+        v-if="randomImage"
+        class="image">
+        <img
+          :src="randomImage"
+          height="300"
+          width="auto" >
       </div>
       <div class="homebtn">
         <v-btn
@@ -12,7 +17,7 @@
           class="white--text"
           width="200px"
           @click="getRandomImage()"
-          >{{ randomImageButton }}</v-btn
+        >{{ randomImageButton }}</v-btn
         >
       </div>
       <Footer />
@@ -42,20 +47,12 @@ export default {
     },
 
     methods: {
-    /* --- fetch lisst of all breeds --- */
-        getAllBreedList () {
-            fetch('https://dog.ceo/api/breeds/list/all')
-                .then(response => response.json())
-                .then(data => console.log(data))
-        },
-
         /* --- fetch random image --- */
         getRandomImage () {
             fetch('https://dog.ceo/api/breeds/image/random')
                 .then(response => response.json())
                 .then(data => {
                     this.randomImage = data.message
-                    console.log(this.randomImage)
                 })
         }
     }

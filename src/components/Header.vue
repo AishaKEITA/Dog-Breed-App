@@ -2,7 +2,9 @@
 <template>
   <div class="header">
     <div class="header-wrap">
-      <v-toolbar color="#264653" prominent>
+      <v-toolbar
+        color="#264653"
+        prominent>
         <v-spacer />
         <v-toolbar-title class="white--text">Vue Dog Application</v-toolbar-title>
         <v-spacer />

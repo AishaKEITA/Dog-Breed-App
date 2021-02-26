@@ -6,7 +6,7 @@
         <div class="container">
           <SideMenu />
           <v-main>
-            <router-view></router-view>
+            <router-view/>
           </v-main>
         </div>
       </section>

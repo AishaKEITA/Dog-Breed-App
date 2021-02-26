@@ -1,15 +1,15 @@
 <template>
   <div id="sideBar">
- <section>
+    <section>
       <aside>
-      <SideMenuButton
-        v-for="button in menuButtons"
-        v-bind:key="button.menuText"
-        :menuText="button.menuText"
-        :path="button.path"
-      />
-    </aside>
-   </section>
+        <SideMenuButton
+          v-for="button in menuButtons"
+          :key="button.menuText"
+          :menu-text="button.menuText"
+          :path="button.path"
+        />
+      </aside>
+    </section>
   </div>
 </template>
 <script>
