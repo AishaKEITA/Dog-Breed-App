@@ -15,7 +15,7 @@
 
 <script>
 import Footer from '../components/Footer'
-import Breed from './Breed'
+import Breed from '../components/Breed'
 export default {
     name: 'Breeds',
     components: {

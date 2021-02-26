@@ -2,7 +2,8 @@
 <template>
   <div class="subbreedbtn">
     <v-btn
-      color="red"
+      class="white--text"
+      color="#264653"
       width="200px"
       @click="showSubbreeds = !showSubbreeds"
     >
@@ -19,7 +20,7 @@
   </div>
 </template>
 <script>
-import Breed from './Breed'
+import Breed from '../components/Breed'
 export default {
     name: 'Subbreed',
     components: {

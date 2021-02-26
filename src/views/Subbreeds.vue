@@ -18,7 +18,7 @@
 
 <script>
 import Footer from '../components/Footer'
-import Subbreed from './Subbreed'
+import Subbreed from '../components/Subbreed'
 export default {
     name: 'Subbreeds',
     components: {

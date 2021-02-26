@@ -2,7 +2,7 @@
 <template>
   <div class="breedbtn">
     <v-btn
-      class="white--text"
+      class="grey"
       color="#264653"
       width="200px"
       @click="breedClickHandler()"
@@ -24,7 +24,7 @@
       <div>
         <v-btn
           class="white--text"
-          color="#fcbf49"
+          color="#f4a261"
           width="200px"
           @click="getNewImage()"
         >
